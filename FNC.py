@@ -50,22 +50,6 @@ def Tseitin(A, letrasProposicionalesA):
     letrasProposicionalesB = [chr(x) for x in range(256, 300)]
     assert(not bool(set(letrasProposicionalesA) & set(letrasProposicionalesB))), u"¡Hay letras proposicionales en común!"
 
-    return "OK"
-
-# Subrutina Clausula para obtener lista de literales
-# Input: C (cadena) una clausula
-# Output: L (lista), lista de literales
-def Clausula(C):
-
-    # CODIGO AQUI
-
-    return "OK"
-
-# Algoritmo para obtencion de forma clausal
-# Input: A (cadena) en notacion inorder en FNC
-# Output: L (lista), lista de listas de literales
-def formaClausal(A):
-
     l = []
     pila = []
     i = -1
@@ -106,6 +90,24 @@ def formaClausal(A):
     b = atomo + b
     return b
 
+
+# Subrutina Clausula para obtener lista de literales
+# Input: C (cadena) una clausula
+# Output: L (lista), lista de literales
+def Clausula(C):
+
+    # CODIGO AQUI
+
+    return "OK"
+
+# Algoritmo para obtencion de forma clausal
+# Input: A (cadena) en notacion inorder en FNC
+# Output: L (lista), lista de listas de literales
+def formaClausal(A):
+
+    # CODIGO AQUI
+
+    return "OK"
 
 # Test enFNC()
 # Descomente el siguiente código y corra el presente archivo
