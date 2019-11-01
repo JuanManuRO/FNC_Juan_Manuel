@@ -65,7 +65,7 @@ def Tseitin(A, letrasProposicionalesA):
             s = A[0]
             if len(A) > 0:
                 s = A[0]
-        elif s == ')'
+        elif s == ')':
             w = pila[-1]
             o = pila[-2]
             v = pila[-3]
@@ -96,18 +96,39 @@ def Tseitin(A, letrasProposicionalesA):
 # Output: L (lista), lista de literales
 def Clausula(C):
 
-    # CODIGO AQUI
-
-    return "OK"
+    l = []
+    while len(C) > 0:
+        s = C[0]
+        if s == "O":
+            C = C[1:]
+        elif s == "-":
+            literal = s + C[1]
+            l.append(literal)
+            C = C[2:]
+        else:
+            L.append(s)
+            C=C[:1]
+    return l
 
 # Algoritmo para obtencion de forma clausal
 # Input: A (cadena) en notacion inorder en FNC
 # Output: L (lista), lista de listas de literales
 def formaClausal(A):
 
-    # CODIGO AQUI
-
-    return "OK"
+    l = []
+    i = 0
+    while len(A) > 0:
+        if i >= len(A):
+            l.append(Clausula(A))
+            A = []
+        else:
+            if A[i] == "Y":
+                l.append(Clausula(A[:i]))
+                A = A[i+1:]
+                i = 0
+            else:
+                i += 1
+    return l
 
 # Test enFNC()
 # Descomente el siguiente código y corra el presente archivo
